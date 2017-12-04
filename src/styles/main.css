@@ -1,0 +1,68 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    height: 100%;
+}
+#landing {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url("../collage.jpeg");
+    border: 2px solid black;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.desc {
+    padding: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    width: 85%;
+    margin-top: 70px;
+    background-color:rgba(19, 178, 207, 0.7) ;
+    border: 2px solid black;
+    color: white;
+    text-shadow: 2px 2px 2px rgb(19, 178, 207);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.register {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    width:40% ;
+    margin: 0 10px;
+    background-color: rgba(19, 178, 207, 0.7);
+    border: 2px solid black;
+    font-size: 24px;
+    text-shadow: rgb(45, 61, 76)
+}
+.register a:link {
+color: white;
+}
+.register a:visited {
+    color:white;
+}
+footer {
+    width: 100%;
+    background-color: rgba(19, 178, 207, 0.7);
+}
+footer ul {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+ul a:link {
+    color: white;
+}
+ul a:visited {
+    color: white;
+}
+
+

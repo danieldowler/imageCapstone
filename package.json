@@ -1,0 +1,21 @@
+{
+  "name": "image-capstone",
+  "version": "1.0.0",
+  "description": "image upload database",
+  "main": "index.html",
+  "scripts": {
+    "serve":"gulp run"
+  },
+  "keywords": [
+    "image",
+    "tag",
+    "upload",
+    "archive"
+  ],
+  "author": "Daniel Dowler",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-server-livereload": "^1.9.2"
+  }
+}
