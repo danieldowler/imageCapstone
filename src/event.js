@@ -49,6 +49,7 @@ function dragend_handler(e) {
 $(
     function () {
         $("#load_more").click(load_images)
+        load_tags();
     }
 )
 function load_images(e) {
@@ -66,3 +67,16 @@ function load_images(e) {
         })
     });
 }
+function load_tags(e){
+    $.ajax({
+        url:"http://localhost:8080/tag",
+        method: "GET",
+        dataType:"json"
+    })
+    .done(res =>{
+        console.log(res);
+        res.forEach(i =>{
+            $(".tag-list").append("<a href='#'>" + i.name + "</a>")
+        })
+    })
+};
