@@ -3,7 +3,7 @@ function drop_handler(e) {
     e.preventDefault();
     var dt = e.dataTransfer;
     if (dt.items) {
-        for (i = 0; i < dt.items; i++) {
+        for (i = 0; i < dt.items.length; i++) {
             if (dt.items[i].kind == "file") {
                 var f = dt.items[i].getAsFile();
                 var formData = new FormData();
@@ -13,11 +13,15 @@ function drop_handler(e) {
                     url: 'http://localhost:8080/image/',
                     type: 'POST',
                     data: formData,
-                    processData: false,  // tell jQuery not to process the data
-                    contentType: false,  // tell jQuery not to set contentType
+                    processData: false,  
+                    contentType: false,  
                     success: function (data) {
-                        console.log(data);
-                        alert(data);
+                        console.log('image returned', data);
+                        $('.last-image').css({
+                            'background-image': `url("http://localhost:8080/${data.URL}")`,
+                            'background-size': 'cover'
+                        });
+                        $('.tag-name').show()
                     }
                 });
             }
@@ -55,11 +59,11 @@ $(
 function load_images(e) {
     e.preventDefault();
     console.log("loading next image");
-    /*var li = e.load_images;*/
     $.ajax({
         url: "serverimages.js",
         method: "GET",
         dataType: "json"
+
     }).done(res => {
         console.log(res);
         res.forEach(i => {
