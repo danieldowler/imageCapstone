@@ -1,3 +1,5 @@
+let current_image= null;
+
 function drop_handler(e) {
     console.log("drop_image");
     e.preventDefault();
@@ -17,6 +19,7 @@ function drop_handler(e) {
                     contentType: false,  
                     success: function (data) {
                         console.log('image returned', data);
+                        current_image = data;
                         $('.last-image').css({
                             'background-image': `url("http://localhost:8080/${data.URL}")`,
                             'background-size': 'cover'
@@ -54,6 +57,22 @@ $(
     function () {
         $("#load_more").click(load_images)
         load_tags();
+        $('.new-tag').click(function(){
+            let tag = $('#tag-item').val();
+            let image_id = current_image._id;
+            console.log('Data to send to server: ', tag, image_id);
+            let data = {tag, image_id}
+            $.ajax({
+                url:"http://localhost:8080/tag",
+                method: "POST",
+                data: data
+            })
+            .done(res => {
+                console.log("tag saved", res)
+                $(".last-upload").append("Tag saved to server")
+                load_tags()
+            })
+        });
     }
 )
 function load_images(e) {
@@ -71,16 +90,4 @@ function load_images(e) {
         })
     });
 }
-function load_tags(e){
-    $.ajax({
-        url:"http://localhost:8080/tag",
-        method: "GET",
-        dataType:"json"
-    })
-    .done(res =>{
-        console.log(res);
-        res.forEach(i =>{
-            $(".tag-list").append("<a href='#'>" + i.name + "</a>")
-        })
-    })
-};
+

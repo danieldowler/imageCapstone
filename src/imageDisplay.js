@@ -7,7 +7,8 @@ $(function (){
     .done(res =>{
         console.log(res);
         res.forEach(i =>{
-            $(".image-list").append("<li><img src=/" + i.URL + "></li>")
+            $(".image-list").append('<li><img src="http://localhost:8080/' + i.URL + '"></li>')
         })
     })
+    load_tags();
 })
