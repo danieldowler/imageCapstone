@@ -71,7 +71,9 @@ $(
                 console.log("tag saved", res)
                 $(".last-upload").append("Tag saved to server")
                 load_tags()
-            })
+            }).fail(function(err){
+                console.log(err);
+            });
         });
     }
 )
