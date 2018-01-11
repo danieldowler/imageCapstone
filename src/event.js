@@ -61,7 +61,7 @@ $(
             let tag = $('#tag-item').val();
             let image_id = current_image._id;
             console.log('Data to send to server: ', tag, image_id);
-            let data = {tag, image_id}
+            let data = {tag:tag, image_id:image_id}
             $.ajax({
                 url:"http://localhost:8080/tag",
                 method: "POST",
