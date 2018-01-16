@@ -15,9 +15,13 @@ $(function (){
         e.preventDefault();
         var id = $(e.target).data('id');
         var images = tagImages.filter(function(image){
-            
+            return image.tags.includes(id);
         });
+        displayImages(images);
     });
+    $('.show-all').click(function(){
+        displayImages(tagImages);
+    })
 })
 function displayImages(images){
     $(".image-list").empty();

@@ -65,7 +65,7 @@ $(
             $.ajax({
                 url:"http://localhost:8080/tag",
                 method: "POST",
-                data: data
+                data: JSON.stringify(data), processData:false, contentType:"application/json"
             })
             .done(res => {
                 console.log("tag saved", res)
@@ -84,7 +84,6 @@ function load_images(e) {
         url: "serverimages.js",
         method: "GET",
         dataType: "json"
-
     }).done(res => {
         console.log(res);
         res.forEach(i => {
