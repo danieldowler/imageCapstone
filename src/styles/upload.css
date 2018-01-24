@@ -10,6 +10,12 @@ background-image: url("../green-background.jpg");
 background-size: cover;
 background-repeat: no-repeat; 
 }
+.form_template {
+    display:none;
+}
+.tag-form{
+
+}
 #user-page {
     margin: 0;
     padding: 0;
@@ -17,6 +23,11 @@ background-repeat: no-repeat;
     width: 100%;
     background-image: url("../green-background.jpg");
     background-size: cover;
+}
+.tag-list button{
+    background-color: red;
+    width: 30%;
+    height: 15%;
 }
 .page {
     display: flex;
@@ -64,6 +75,10 @@ display: none;
 }
 .tag-list {
     flex: 4;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
     margin: 5px 5px;
     border: 2px solid rgb(3, 3, 59);
     padding: 3px;
@@ -71,6 +86,7 @@ display: none;
     text-shadow: 0 0 2px white;
     text-decoration: underline;
     text-align: center;
+    overflow: auto;
 }
 .tag-list h2{
     font-size: 18px;

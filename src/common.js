@@ -8,7 +8,7 @@ function load_tags(e){
         console.log(res);
         $(".tag-list").html("")
         res.forEach(i =>{
-            $(".tag-list").append("<a href='#' class= 'image-tags' data-id='" + i._id + "'>" + i.name + "</a>")
+            $(".tag-list").append("<button href='#' class= 'image-tags' data-id='" + i._id + "'>" + i.name + "</button>")
         })
     })
 };
