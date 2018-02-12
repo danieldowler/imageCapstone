@@ -18,6 +18,22 @@ html{
     background-repeat: no-repeat;
     background-size: cover;
 }
+.input-field{
+    margin-top: 0;
+}
+button {
+    border-radius: 10%;
+    background-color: rgb(255, 128, 0)
+}
+.err{
+    color: red;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 0;
+    }
+.hidden {
+    display: none;
+}
 .desc {
     padding: 5px;
     font-size: 24px;

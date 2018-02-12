@@ -15,9 +15,11 @@
         <p>Tired of searching eternally for the one picture you want? Come inside and see how we can help.</p>
     </section>
     <section class="register">
-        <a href="">sign-up</a>
-        <p>or</p>
-        <a href="">sign-in</a>
+        <div class="hide">
+            <a href="signup.html">sign-up</a>
+            <p>or</p>
+            <a href="" class="sign-in">sign-in</a>
+        </div>
     </section>
     <footer class="contact">
         <ul>
@@ -28,6 +30,19 @@
             <li>(555)123-4567</li>
         </ul>
     </footer>
+    <div class="hidden signin-form">
+        <input type="text" class="signin-user">
+        <h4 class="hidden username-err err">Must be at least 7 characters</h4>
+        <h2 class= "input-field">Username</h2>
+        <input type="password" class="signin-pass">
+        <h4 class="hidden pass-err err">Must be at least 10 characters</h4>
+        <h2 class= "input-field">Password</h2>
+        <button class="submit-button">Submit</button>
+        <button class="cancel-button ">Cancel</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="users.js"></script>
 </body>
 
 </html>

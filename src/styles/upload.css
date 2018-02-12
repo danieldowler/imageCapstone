@@ -13,12 +13,38 @@ background-repeat: no-repeat;
 .form_template {
     display:none;
 }
-.tag-form{
+#signup-page {
+    height: 100%;
+    width: 100%;
+    background-image: url("../green-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 
 }
+.signup-form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-image: url("../green-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.sign-input {
+    width: 33%;
+    margin-left: 33%;
+}
+.sign-up {
+    margin-top: 0;
+    width: 33%;
+    margin-left: 33%;
+}
+.sign-button {
+    width: 33%;
+    margin-left: 33%;
+}
 #user-page {
-    margin: 0;
-    padding: 0;
     height: 100%;
     width: 100%;
     background-image: url("../green-background.jpg");
@@ -28,6 +54,7 @@ background-repeat: no-repeat;
     background-color: red;
     width: 30%;
     height: 15%;
+    border-radius: 5%;
 }
 .page {
     display: flex;
@@ -66,6 +93,17 @@ background-repeat: no-repeat;
     color: rgb(3, 3, 59);
     text-shadow: 0 0 2px white;
     text-decoration: underline;
+}
+button {
+    border-radius: 10%;
+    background-color: rgb(255, 128, 0)
+}
+.err{
+color: red;
+font-style: italic;
+}
+.hidden {
+    display: none;
 }
 h4 {
     margin: 0;
@@ -140,9 +178,6 @@ display: none;
 }
 .directory li img{
     width: 60%;
-}
-.directory .hidden {
-    /*display: none;*/
 }
 footer {
     width: 100%;
