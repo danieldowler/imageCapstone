@@ -1,5 +1,9 @@
 var tagImages = []
 $(function () {
+    let token = window.localStorage.getItem("token");
+    if( !token){
+        window.location = "/"
+    }
     $.ajax({
         url: "http://localhost:8080/image",
         method: "GET",
@@ -57,9 +61,9 @@ $(function () {
 
     $('.image-list').on('click', '#add-tag', e => {
         let tag = $('#tag').val();
-        console.log('whats going on?', e.target)
         let image_id= $("#image_id").val();
         let data = {tag:tag, image_id:image_id}
+        console.log('anyone home?')
         $.ajax({
             url:"http://localhost:8080/tag",
             method: "POST",

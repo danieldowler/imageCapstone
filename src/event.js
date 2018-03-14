@@ -69,7 +69,7 @@ $(
             })
             .done(res => {
                 console.log("tag saved", res)
-                $(".last-upload").append("Tag saved to server")
+                $(".confirm").fadeIn(500).delay(2000).fadeOut(500)
                 load_tags()
             }).fail(function(err){
                 console.log(err);
