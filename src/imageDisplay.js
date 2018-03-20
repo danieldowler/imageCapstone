@@ -1,19 +1,10 @@
 var tagImages = []
 $(function () {
     let token = window.localStorage.getItem("token");
-    if( !token){
+    if (!token) {
         window.location = "/"
     }
-    $.ajax({
-        url: "http://localhost:8080/image",
-        method: "GET",
-        dataType: "json"
-    })
-        .done(res => {
-            console.log(res);
-            tagImages = res;
-            displayImages(tagImages);
-        })
+    loadImages();
     load_tags();
     $('.tag-list').on('click', '.image-tags', function (e) {
         e.preventDefault();
@@ -28,10 +19,24 @@ $(function () {
     });
     $('.add-tag').click();
 })
+
+function loadImages() {
+    $.ajax({
+        url: "http://localhost:8080/image",
+        method: "GET",
+        dataType: "json"
+    })
+        .done(res => {
+            console.log(res);
+            tagImages = res;
+            displayImages(tagImages);
+        })
+}
+
 function displayImages(images) {
     $(".image-list").empty();
     images.forEach(i => {
-        $(".image-list").append('<a href= "#" class= "add-tag img-list" data-id="' +i._id+ '"><img src="http://localhost:8080/' + i.URL + '"></a>')
+        $(".image-list").append('<a href= "#" class= "add-tag img-list" data-featherlight="http://localhost:8080/' + i.URL + '"><img data-id="' + i._id + '" src="http://localhost:8080/' + i.URL + '"></a>')
     })
 };
 var tagImages = [{}];
@@ -41,12 +46,13 @@ $(function () {
 
     $('.image-list').on('click', '.img-list', (e) => {
         e.preventDefault();
-        console.log("I am working")
+        console.log(e.target)
         let form = $('.form_template').clone();
         form.removeClass('form_template');
         $(e.target).parent().append(form);
-        let image_id= $(e.target).data('id');
-        $("#image_id").val(image_id);
+        let image_id = $(e.target).data('id');
+        console.log(image_id)
+        $(e.target).parent().find(".img-id").val(image_id);
     });
 
     $('.image-list').on('click', '.tagForm', e => {
@@ -60,20 +66,22 @@ $(function () {
 
 
     $('.image-list').on('click', '#add-tag', e => {
+        e.stopPropagation();
         let tag = $('#tag').val();
-        let image_id= $("#image_id").val();
-        let data = {tag:tag, image_id:image_id}
+        let image_id = $(".img-id").val();
+        console.log(image_id)
+        let data = { tag: tag, image_id: image_id }
         console.log('anyone home?')
         $.ajax({
-            url:"http://localhost:8080/tag",
+            url: "http://localhost:8080/tag",
             method: "POST",
-            data: JSON.stringify(data), processData:false, contentType:"application/json"                        
+            data: JSON.stringify(data), processData: false, contentType: "application/json"
         })
-        .done(res => {
-            console.log("tag saved", res)
-            //need to add value for added tags
-        }).fail(function(err){
-            console.log(err);
-        });
+            .done(res => {
+                loadImages();
+                load_tags();
+            }).fail(function (err) {
+                console.log(err);
+            });
     });
 })
