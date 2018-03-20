@@ -38,6 +38,9 @@ function displayImages(images) {
     images.forEach(i => {
         $(".image-list").append('<a href= "#" class= "add-tag img-list" data-featherlight="http://localhost:8080/' + i.URL + '"><img data-id="' + i._id + '" src="http://localhost:8080/' + i.URL + '"></a>')
     })
+   $('.img-list').each(function(e){
+        $(this).featherlight($(this).find('img'), {});
+    });
 };
 var tagImages = [{}];
 $(function () {
@@ -66,7 +69,6 @@ $(function () {
 
 
     $('.image-list').on('click', '#add-tag', e => {
-        e.stopPropagation();
         let tag = $('#tag').val();
         let image_id = $(".img-id").val();
         console.log(image_id)
