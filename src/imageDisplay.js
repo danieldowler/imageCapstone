@@ -18,6 +18,7 @@ $(function () {
         displayImages(tagImages);
     });
     $('.add-tag').click();
+    $('.delete').click()
 })
 
 function loadImages() {

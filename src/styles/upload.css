@@ -48,7 +48,7 @@ background-repeat: no-repeat;
 }
 #user-page {
     height: 100%;
-    width: 100%;
+    width: 99%;
     background-image: url("../Elegant_Background.jpg");
     background-size: cover;
 }
@@ -59,6 +59,8 @@ background-repeat: no-repeat;
     border-radius: 5%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bold;
+    color: rgb(156, 8, 8);
+    font-size: 24px;
 }
 .page {
     display: flex;
@@ -84,10 +86,10 @@ background-repeat: no-repeat;
     flex: 1;
     margin: 5px 5px;
     padding: 3px;
-    color: rgb(3, 3, 59);
     background-color:rgba(99, 55, 183, .5);
-    border:10px ridge #6173c9;
-    text-shadow:0px 5px 20px #ff5a00;
+    border: 20px outset #6173c9;
+    text-shadow:0px 5px 20px rgb(156, 8, 8);
+    color: rgb(255, 128, 0);
     text-decoration: underline;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 24px;
@@ -98,10 +100,10 @@ background-repeat: no-repeat;
     flex: 1;
     margin: 5px 5px;
     padding: 3px;
-    color: rgb(3, 3, 59);
-    text-shadow:0px 5px 20px #ff5a00;
     background-color:rgba(99, 55, 183, .5);
-    text-shadow:0px 5px 20px #ff5a00;
+    text-shadow:0px 5px 20px rgb(156, 8, 8);
+    color: rgb(255, 128, 0);
+    border:10px ridge #6173c9;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-decoration: underline;
 }
@@ -145,8 +147,8 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
     font-size: 18px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-decoration: underline;
-    text-shadow:0px 5px 20px #ff5a00;
-    color: #da0505
+    text-shadow:0px 5px 20px rgb(156, 8, 8);
+    color: rgb(255, 128, 0);
 }
 .tag-list ul {
     display: flex;
@@ -167,6 +169,8 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
     flex: 4;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color:rgba(99, 55, 183, .5);
+    border:10px ridge #6173c9;
+    margin: 5px;
 }
 .user-info {
     display: flex;
@@ -179,22 +183,27 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .user-info a:link {
-    color: white;
-    text-shadow:0px 5px 20px #ff5a00;
+    text-shadow:0px 5px 20px rgb(156, 8, 8);
+    color: rgb(255, 128, 0);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .user-info a:visited {
-    color: white;
-    text-shadow:0px 5px 20px #ff5a00; 
+    text-shadow:0px 5px 20px rgb(156, 8, 8);
+    color: rgb(255, 128, 0); 
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.user-info a:hover {
+    font-weight: bold;
+    text-shadow: 0px 5px 20px rgb(255, 128, 0);
+    color: rgb(156, 8, 8)
 }
 .directory{
     flex: 1;
-    margin: 5px 0;
+    margin: 5px;
     text-align: center;
     text-decoration: underline;
-    text-shadow:0px 5px 20px #ff5a00;
-    color: rgb(3, 3, 59);
+    text-shadow:0px 5px 20px rgb(156, 8, 8);
+    color: rgb(255, 128, 0);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color:rgba(99, 55, 183, .5);
     border:10px ridge #6173c9;
@@ -211,8 +220,6 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
     width: 200px;
     margin: 2px;
 }
-.directory img:hover {
-}
 footer {
     width: 100%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -223,9 +230,10 @@ footer ul {
     width: 100%;
     padding: 2px;
     margin: 0;
-    color: rgb(3, 3, 59);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-shadow:0px 5px 20px #ff5a00;
+    text-shadow:0px 5px 20px rgb(156, 8, 8);
+    color: rgb(255, 128, 0);
+    background-color:rgba(99, 55, 183, .5);
 }
 ul a:link {
     color: white;
