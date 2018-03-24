@@ -49,6 +49,7 @@ $(function () {
     displayImages(tagImages);
 
     $('.image-list').on('click', '.img-list', (e) => {
+        e.stopPropagation();
         e.preventDefault();
         console.log(e.target)
         let form = $('.form_template').clone();
@@ -64,12 +65,14 @@ $(function () {
     });
 
     $('.image-list').on('click', '#cancel', e => {
+        e.stopPropagation();
         $(e.target).closest('.tagForm').remove();
 
     });
 
 
     $('.image-list').on('click', '#add-tag', e => {
+        e.stopPropagation();
         let tag = $('#tag').val();
         let image_id = $(".img-id").val();
         console.log(image_id)
